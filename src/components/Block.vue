@@ -1,12 +1,28 @@
 <template>
-  <div class="block">
+  <div class="block" v-if="showBlock" @click="hide">
       Click Me
   </div>
 </template>
 
 <script>
 export default {
-    props: ['delay', 'id', 'letters']
+    props: ['delay', 'id', 'letters'],
+    data() {
+        return {
+            showBlock: false
+        }
+    },
+    methods: {
+        hide() {
+            console.log('clicking the block')
+            this.showBlock = false
+        }
+    },
+    mounted() {
+        setTimeout(() => {
+            this.showBlock = true
+        }, this.delay)
+    }
 }
 </script>
 
