@@ -1,11 +1,11 @@
 <template>
-  <h1>Reaction Game Timer</h1>
-  <button v-if="!isPlaying && round !== 10" @click="start">Start Playing</button>
-  <button v-if="round === 10" @click="startover">Start Over</button>
+  <h1 class='game-name'>Reaction Game Timer</h1>
   <Results :winner="winner" 
     :setWinnerToNull="setWinnerToNull"
     :round="round"
   />
+  <button v-if="!isPlaying && round !== 10" @click="start">Start Playing</button>
+  <button v-if="round === 10" @click="startover">Start Over</button>
   <div class="players" v-if="isPlaying">
     <Block
       :delay="delay"
@@ -86,15 +86,43 @@ export default {
 </script>
 
 <style>
+body, html {
+  height: 100%;
+  
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #2c3e50d7;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    95deg,
+    rgb(4, 45, 65) 0%,
+    rgba(179, 229, 252, 1) 50%,
+    rgb(255, 145, 0) 50%,
+    rgb(98, 131, 240) 100%
+  );
+}
+.game-name {
+  background-color: rgb(255, 255, 255);
+  margin: 0 20%;
+  border-radius: 0 0 10px 10px;
+
 }
 .players {
-  display: inline;
+  display: flex;
+  flex-direction: row;
+}
+button {
+  /* margin: 30px; */
+  padding: 10px 10px;
+  background-color: rgb(134, 134, 238);
+  border-radius: 5px;
+  border: none;
+  color: white;
+
 }
 </style>

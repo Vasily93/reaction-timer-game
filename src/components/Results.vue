@@ -1,6 +1,10 @@
-<template>
-  <p v-if="!finalWinner">Left: {{left}}  Right: {{right}} Round: {{round}}</p>
-  <h3 v-if="finalWinner">{{this.finalWinner}}</h3>
+<template >
+  <p class='results' v-if="!finalWinner">
+      Left: {{left}}  Right: {{right}} Round: {{round}}
+  </p>
+  <h3 class='results' v-if="finalWinner">
+      {{this.finalWinner}}
+  </h3>
 </template>
 
 <script>
@@ -48,5 +52,10 @@ export default {
 </script>
 
 <style>
-
+    .results {
+        background-color: rgb(255, 255, 255);
+        margin: 20px 20%;
+        padding: 10px;
+        border-radius: 5px;
+    }
 </style>
