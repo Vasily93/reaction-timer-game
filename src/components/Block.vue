@@ -56,10 +56,17 @@ export default {
     .block {
         width: 200px;
         border-radius: 20px;
-        background: goldenrod;
-        columns: white;
+        background: linear-gradient(
+            45deg,
+            rgb(134, 65, 0) 0%,
+            rgb(248, 163, 6) 60%
+        );
         text-align: center;
         padding: 70px 0;
         margin: 40px auto;
+        color: white;
+        border: solid;
+        border-width: 5px;
+        
     }
 </style>
