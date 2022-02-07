@@ -12,7 +12,7 @@
       <p>Player on the left: A, S, D, F.</p>
       <p>Player on the right: H, J, K, L.</p>
       <p>Within few seconds after starting the game  a card will appear on each side.
-        Whoever hits the right letter on their side wins the round.
+        Whoever hits the right letter on their side faster wins the round.
       </p>
       <p>The game is 10 rounds.</p>
     </span>
