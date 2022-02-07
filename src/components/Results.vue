@@ -1,6 +1,8 @@
 <template >
-  <p class='results' v-if="!finalWinner">
-      Left: {{left}}  Right: {{right}} Round: {{round}}
+  <p class='results'>
+      <span class="player-count">Left: {{left}}</span>
+      <strong>Round: {{round}}</strong>   
+      <span class="player-count">Right: {{right}}</span>
   </p>
   <h3 class='results' v-if="finalWinner">
       {{this.finalWinner}}
@@ -20,11 +22,11 @@ export default {
     methods: {
         setFinalWinner() {
             if(this.right > this.left) {
-                this.finalWinner = 'Right is the Winner'
+                this.finalWinner = 'Right player is the Winner'
             } else if(this.right < this.left) {
-                this.finalWinner = 'Left is the Winner'
+                this.finalWinner = 'Left player is the Winner'
             } else {
-                this.finalWinner = 'This is a draw'
+                this.finalWinner = 'This is a tie. Try again!'
             }
         }
     },
@@ -57,5 +59,9 @@ export default {
         margin: 20px 20%;
         padding: 10px;
         border-radius: 5px;
+        
+    }
+    .player-count {
+        margin: 0 80px;
     }
 </style>

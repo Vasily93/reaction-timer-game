@@ -6,6 +6,17 @@
   />
   <button v-if="!isPlaying && round !== 10" @click="start">Start Playing</button>
   <button v-if="round === 10" @click="startover">Start Over</button>
+  <div class='rules' v-if="!isPlaying">
+    <span>
+      <p>This game is for 2 players. Each player gets 4 letters.</p>
+      <p>Player on the left: A, S, D, F.</p>
+      <p>Player on the right: H, J, K, L.</p>
+      <p>Within few seconds after starting the game  a card will appear on each side.
+        Whoever hits the right letter on their side wins the round.
+      </p>
+      <p>The game is 10 rounds.</p>
+    </span>
+  </div>
   <div class="players" v-if="isPlaying">
     <Block
       :delay="delay"
@@ -78,6 +89,7 @@ export default {
   },
   mounted() {
     document.addEventListener('keydown', (e) => {
+      console.log(e.code)
       this.handleKeyPress(e.code[e.code.length-1])
       
     })
@@ -117,12 +129,18 @@ body, html {
   flex-direction: row;
 }
 button {
-  /* margin: 30px; */
   padding: 10px 10px;
   background-color: rgb(134, 134, 238);
   border-radius: 5px;
   border: none;
   color: white;
-
+}
+.rules {
+  background-color: rgba(2, 2, 34, 0.466);
+  color: white;
+  font-size: large;
+  margin: 50px 20%;
+  padding: 10px;
+  border-radius:  10px;
 }
 </style>

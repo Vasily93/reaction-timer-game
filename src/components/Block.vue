@@ -59,7 +59,7 @@ export default {
         background: linear-gradient(
             45deg,
             rgb(134, 65, 0) 0%,
-            rgb(248, 163, 6) 60%
+            rgb(248, 192, 6) 60%
         );
         text-align: center;
         padding: 70px 0;
